@@ -11,74 +11,72 @@
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:#efe9dd;color:var(--ink)}
-  header{background:var(--accent);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  header h1{font-family:Georgia,serif;font-weight:normal;font-size:20px;margin:0 12px 0 0}
+  header{background:var(--accent);color:#fff;padding:4px 10px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  header h1{font-family:Georgia,serif;font-weight:normal;font-size:16px;margin:0 8px 0 0}
   header .status{font-size:12px;opacity:.85;margin-left:auto}
-  button{font:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:5px;cursor:pointer}
+  button{font:inherit;font-size:12px;padding:2px 7px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:5px;cursor:pointer}
   button:hover{background:#f5efe3}
   header button{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
   header button:hover{background:rgba(255,255,255,.25)}
   button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
   button.danger{color:#a11d1d}
-  .wrap{display:flex;min-height:calc(100vh - 52px)}
-  aside{width:240px;flex:none;background:#f6f1e6;border-right:1px solid var(--line);padding:12px;overflow:auto}
-  aside h3{margin:4px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .wrap{display:flex;min-height:calc(100vh - 32px)}
+  body.side-collapsed aside{display:none}
+  #btnSide{font-size:14px;padding:0 7px;line-height:20px}
+  aside{width:190px;flex:none;background:#f6f1e6;border-right:1px solid var(--line);padding:6px;overflow:auto}
+  aside h3{margin:2px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
   #libList{list-style:none;margin:0;padding:0}
-  #libList li{padding:7px 8px;border-radius:5px;cursor:pointer;font-size:13px;border:1px solid transparent}
+  #libList li{padding:3px 5px;border-radius:4px;cursor:pointer;font-size:12px;border:1px solid transparent}
   #libList li:hover{background:#ece4d4}
   #libList li.active{background:#fff;border-color:var(--line)}
   #libList li small{display:block;color:var(--muted);font-size:11px}
-  #folderInfo{font-size:11px;color:var(--muted);margin:6px 0 10px;word-break:break-all}
-  main{flex:1;padding:16px 20px 60px;overflow:auto}
-  .sheet{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px 20px;max-width:1500px}
-  .meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px 14px;margin-bottom:12px}
-  .meta label{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);display:flex;flex-direction:column;gap:3px}
-  .meta input,.meta select,.meta textarea{font:inherit;font-size:14px;padding:5px 7px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+  #folderInfo{font-size:10px;color:var(--muted);margin:3px 0 6px;word-break:break-all}
+  main{flex:1;padding:6px 8px 30px;overflow:auto}
+  .sheet{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:6px 8px;max-width:1500px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:3px 6px;margin-bottom:4px}
+  .meta label{font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);display:flex;flex-direction:column;gap:0}
+  .meta input,.meta select,.meta textarea{font:inherit;font-size:13px;padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
   .meta .wide{grid-column:1/-1}
-  #title{font-family:Georgia,serif;font-size:22px}
+  #title{font-family:Georgia,serif;font-size:16px}
   #taalSel{font-weight:600;border-color:var(--accent)}
-  .taalinfo{font-size:13px;color:var(--muted);margin:4px 0 12px;padding:8px 10px;background:#f4eee2;border-radius:5px}
+  .taalinfo{font-size:11px;color:var(--muted);margin:2px 0 4px;padding:3px 6px;background:#f4eee2;border-radius:5px}
   .taalinfo b{color:var(--ink)}
-  .toolbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0;padding:8px;background:#f4eee2;border-radius:5px;position:sticky;top:0;z-index:5}
-  .toolbar .grp{display:flex;gap:3px;align-items:center;flex-wrap:wrap;padding-right:8px;margin-right:4px;border-right:1px solid var(--line)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:3px;align-items:center;margin:4px 0;padding:3px 4px;background:#f4eee2;border-radius:5px;position:sticky;top:0;z-index:5}
+  .toolbar .grp{display:flex;gap:2px;align-items:center;flex-wrap:wrap;padding-right:4px;margin-right:2px;border-right:1px solid var(--line)}
   .toolbar .grp:last-child{border-right:none}
   .toolbar .lbl{font-size:11px;color:var(--muted);margin-right:3px}
-  .sw{min-width:30px;padding:4px 6px;font-weight:600}
+  .sw{min-width:22px;padding:1px 4px;font-weight:600}
   .placeholder{padding:50px 20px;text-align:center;color:var(--muted);font-size:15px;border:2px dashed var(--line);border-radius:6px}
-  .section-h{font-family:Georgia,serif;font-size:17px;color:var(--accent);margin:18px 0 6px;border-bottom:1px solid var(--line);padding-bottom:2px}
-  .av{margin:6px 0 10px;border:1px solid var(--line);border-radius:5px;background:#fff;padding:6px 8px 8px}
-  .av-head{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted);margin-bottom:4px}
-  .av-head select{font-size:12px;padding:2px 4px}
+  .section-h{font-family:Georgia,serif;font-size:14px;color:var(--accent);margin:6px 0 2px;border-bottom:1px solid var(--line);padding-bottom:2px}
+  .av{margin:2px 0 4px;border:1px solid var(--line);border-radius:3px;background:#fff;padding:2px 4px 3px}
+  .av-head{display:flex;gap:4px;align-items:center;font-size:11px;color:var(--muted);margin-bottom:1px}
+  .av-head select{font-size:11px;padding:0 2px}
   .av-head input.avnote{flex:1;font-size:12px;border:none;border-bottom:1px dotted var(--line);background:transparent;padding:2px 4px;color:var(--ink)}
-  .av-head button{padding:1px 7px;font-size:12px}
+  .av-head button{padding:0 5px;font-size:11px}
   .grid{display:flex;align-items:stretch}
-  .rowlbl{display:flex;flex-direction:column;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding-right:6px;flex:none;width:44px}
+  .rowlbl{display:flex;flex-direction:column;font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding-right:3px;flex:none;width:36px;overflow:hidden}
   .rowlbl div{display:flex;align-items:center}
-  .vibs{display:flex;flex-wrap:wrap;flex:1;row-gap:8px}
+  .vibs{display:flex;flex-wrap:wrap;flex:1;row-gap:3px}
   .vib{border-left:3px solid var(--ink);padding-left:2px;margin-right:2px;display:flex;flex-direction:column}
   .vib:last-child{border-right:3px solid var(--ink);padding-right:2px}
-  /* rotated lines: a vibhag split across the line start/end gets dashed edges */
-  .vib.cont{border-left:2px dashed var(--muted)}
-  .vib.openend:last-child{border-right:2px dashed var(--muted)}
-  .av-head select.avstart{color:var(--muted)}
-  .mark{font-weight:700;font-size:14px;height:20px;padding-left:4px}
+  .mark{font-weight:700;font-size:12px;height:15px;line-height:15px;padding-left:3px}
   .mark.sam{color:var(--sam)} .mark.khali{color:var(--khali)} .mark.taali{color:var(--taali)}
   .cells{display:flex;flex:1}
-  .cell{display:flex;flex-direction:column;flex:1 1 0;min-width:var(--cw,56px);border-right:1px dotted var(--line)}
+  .cell{display:flex;flex-direction:column;flex:1 1 0;min-width:var(--cw,46px);border-right:1px dotted var(--line)}
   .cell:last-child{border-right:none}
-  .num{font-size:10px;color:var(--muted);text-align:center;height:14px}
-  .theka{font-size:11px;color:#9a8c7c;text-align:center;height:16px;font-style:italic;overflow:hidden;white-space:nowrap}
-  .cell input{font:inherit;width:100%;min-width:0;border:1px solid transparent;border-bottom:1px solid #eadfcd;background:var(--cell);text-align:center;padding:4px 2px;color:var(--ink)}
+  .num{font-size:9px;color:var(--muted);text-align:center;height:11px;line-height:11px}
+  .theka{font-size:10px;color:#9a8c7c;text-align:center;height:13px;line-height:13px;font-style:italic;overflow:hidden;white-space:nowrap}
+  .cell input{font:inherit;width:100%;min-width:0;border:1px solid transparent;border-bottom:1px solid #eadfcd;background:var(--cell);text-align:center;padding:1px;color:var(--ink)}
   .cell input:focus{outline:none;border:1px solid var(--accent2);background:#fff8e6}
-  .cell input.swar{font-weight:600;font-size:15px;height:30px}
-  .cell input.bol{font-size:14px;height:28px}
+  .cell input.swar{font-weight:600;font-size:14px;height:22px}
+  .cell input.bol{font-size:13px;height:21px}
   .cell.samcell input{background:#fdf1ef}
-  .rl-num{height:14px}.rl-theka{height:16px}.rl-swar{height:30px}.rl-bol{height:28px}
+  .rl-num{height:11px}.rl-theka{height:13px}.rl-swar{height:22px}.rl-bol{height:21px}
   .hide-theka .theka,.hide-theka .rl-theka{display:none}
   .hide-num .num,.hide-num .rl-num{display:none}
   .thekaedit{margin:4px 0 8px}
-  .thekaedit .cell input{font-style:italic;font-size:12px;height:24px;background:#faf6ee}
-  details.help{font-size:12.5px;color:var(--muted);margin-top:16px}
+  .thekaedit .cell input{font-style:italic;font-size:11px;height:19px;background:#faf6ee}
+  details.help{font-size:11.5px;color:var(--muted);margin-top:6px}
   details.help summary{cursor:pointer;color:var(--accent)}
   details.help code{background:#f1eadb;padding:0 4px;border-radius:3px}
   #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#2b2420;color:#fff;padding:8px 16px;border-radius:5px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50}
@@ -90,57 +88,28 @@
   .modal input{width:100%;font:inherit;padding:6px;border:1px solid var(--line);border-radius:4px}
   .modal .btns{margin-top:14px;display:flex;justify-content:flex-end;gap:8px}
   .print-only{display:none}
-  /* ===================== PRINT / PDF LAYOUT ===================== */
-  #printView{display:none}
   @media print{
-    @page{
-      size:landscape; margin:11mm 12mm 13mm;
-      @bottom-left{content:"Bandish Notebook"; font:italic 7.5pt Georgia,serif; color:#9a8c7c}
-      @bottom-right{content:"Page " counter(page) " of " counter(pages); font:7.5pt Georgia,serif; color:#9a8c7c}
-    }
-    *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
-    html,body{background:#fff!important}
-    body > *:not(#printView){display:none!important}
-    #printView{display:block; color:#2b2420; font-family:"Segoe UI","Nirmala UI","Noto Sans Devanagari",system-ui,sans-serif}
-
-    .pv-head{border-top:5px solid #8a3b12; background:linear-gradient(#f7efe0,#fbf8f1); padding:9px 14px 8px; border-bottom:1px solid #d9cfc0}
-    .pv-title{font-family:Georgia,"Times New Roman",serif; font-size:21pt; color:#5c2409; line-height:1.15; margin:0}
-    .pv-sub{font-size:10pt; color:#6b5d50; margin-top:3px; letter-spacing:.02em}
-    .pv-sub .dot{color:#b8860b; padding:0 6px}
-    .pv-facts{display:flex; flex-wrap:wrap; gap:4px 26px; margin-top:6px; font-size:8.5pt}
-    .pv-facts span{color:#9a8c7c; text-transform:uppercase; letter-spacing:.06em; font-size:7pt; margin-right:5px}
-    .pv-notes{margin:7px 0 0; padding:5px 10px; background:#fff; border-left:3px solid #b8860b; font-size:9pt; white-space:pre-wrap; color:#3d332c}
-    .pv-legend{font-size:7.5pt; color:#7a6e64; margin:5px 2px 2px; display:flex; gap:14px; flex-wrap:wrap}
-    .pv-legend b.sam{color:#a11d1d} .pv-legend b.kh{color:#1f5f8b} .pv-legend b.ta{color:#2e6b30}
-
-    .pv-sec{margin:11px 0 4px; padding:3px 10px; background:#8a3b12; color:#fff; font-family:Georgia,serif; font-size:11pt; letter-spacing:.08em; text-transform:uppercase; border-radius:2px; break-after:avoid}
-    .pv-av{margin:0 0 7px; break-inside:avoid}
-    .pv-cap{font-size:7.5pt; color:#9a8c7c; margin:0 0 1px 2px}
-    .pv-cap i{color:#5c4f44}
-    table.pv{width:100%; border-collapse:collapse; table-layout:fixed}
-    table.pv th{width:13mm; font-weight:600; font-size:6.5pt; color:#9a8c7c; text-transform:uppercase; letter-spacing:.06em; text-align:right; padding-right:5px; border:none; background:#fff}
-    table.pv td{text-align:center; border-left:1px dotted #d9cfc0; padding:1px 1px; overflow:hidden; white-space:nowrap}
-    table.pv td.vb{border-left:2px solid #2b2420}
-    table.pv td.vbc{border-left:1.5px dashed #9a8c7c}
-    table.pv td.ve{border-right:2px solid #2b2420}
-    table.pv td.veo{border-right:1.5px dashed #9a8c7c}
-    tr.r-mark td{border-left-color:transparent; font-weight:700; font-size:10pt; text-align:left; padding-left:4px; height:15px}
-    tr.r-mark td.vb,tr.r-mark td.vbc{border-left-color:transparent}
-    tr.r-mark td.ve,tr.r-mark td.veo{border-right-color:transparent}
-    tr.r-mark td.sam{color:#a11d1d} tr.r-mark td.kh{color:#1f5f8b} tr.r-mark td.ta{color:#2e6b30}
-    tr.r-num td{font-size:6.5pt; color:#7a6e64; background:#efe6d6; border-top:1px solid #cdbfa9}
-    tr.r-theka td{font-size:7pt; font-style:italic; color:#9a8c7c; background:#f8f3ea}
-    tr.r-swar td{font-size:11.5pt; font-weight:700; color:#2b2420; height:21px; border-top:1px solid #e6dccb}
-    tr.r-bol td{font-size:10pt; color:#4a3f37; height:19px; border-top:1px dotted #e6dccb; border-bottom:1px solid #cdbfa9}
-    tr.r-swar td.kh,tr.r-bol td.kh{background:#eef4f9}
-    tr.r-swar td.samc,tr.r-bol td.samc{background:#fbeae6}
-    tr.r-num td.samc{background:#f3d9d2; color:#a11d1d; font-weight:700}
-    .pv-empty{font-size:10pt; color:#9a8c7c; padding:20px; text-align:center}
+    @page{size:landscape;margin:12mm}
+    body{background:#fff}
+    header,aside,.toolbar,.no-print,.av-head button,.av-head select,details.help,#toast{display:none!important}
+    .wrap{display:block}
+    main{padding:0}
+    .sheet{border:none;padding:0;max-width:none;background:#fff}
+    .meta input,.meta select,.meta textarea{border:none;padding:0;background:transparent}
+    .meta label{font-size:9px}
+    .av{border:none;padding:2px 0;break-inside:avoid}
+    .cell input{border:none!important;background:transparent!important}
+    .print-only{display:inline}
+    ::placeholder{color:transparent!important}
+    .meta select{appearance:none;-webkit-appearance:none}
+    .meta textarea{resize:none}
+    .av-head input.avnote{border:none}
   }
 </style>
 </head>
 <body>
 <header>
+  <button id="btnSide" title="Hide / show the left panel">☰</button>
   <h1>Bandish Notebook</h1>
   <button id="btnNew" title="Start a new bandish">＋ New</button>
   <button id="btnSave" title="Save (Ctrl+S): browser storage + linked folder if set">💾 Save</button>
@@ -156,10 +125,10 @@
   <aside class="no-print">
     <h3>Local folder</h3>
     <button id="btnFolder" style="width:100%">📁 Link save folder…</button>
-    <button id="btnSync" style="width:100%;margin-top:5px">⟳ Load from folder</button>
+    <button id="btnSync" style="width:100%;margin-top:3px">⟳ Load from folder</button>
     <div id="folderInfo">Not linked. Saves stay in this browser until you link a folder or export.</div>
     <h3>My bandishes</h3>
-    <input id="libSearch" placeholder="Filter by title / raag / taal" style="width:100%;font:inherit;font-size:12px;padding:5px;border:1px solid var(--line);border-radius:4px;margin-bottom:6px">
+    <input id="libSearch" placeholder="Filter by title / raag / taal" style="width:100%;font:inherit;font-size:11px;padding:2px 4px;border:1px solid var(--line);border-radius:3px;margin-bottom:3px">
     <ul id="libList"></ul>
   </aside>
 
@@ -188,7 +157,7 @@
         </label>
         <label>Composer / Vaggeyakar<input id="composer" placeholder="e.g. Sadarang"></label>
         <label>Learned from / Source<input id="source" placeholder="Guru, book, recording"></label>
-        <label class="wide">Notes (aroh/avaroh, pakad, meaning of lyrics, etc.)<textarea id="notes" rows="2"></textarea></label>
+        <label class="wide">Notes (aroh/avaroh, pakad, meaning of lyrics, etc.)<textarea id="notes" rows="1"></textarea></label>
       </div>
 
       <div id="taalInfo" class="taalinfo" style="display:none"></div>
@@ -218,10 +187,7 @@
         <div class="grp">
           <label style="font-size:12px"><input type="checkbox" id="showTheka" checked> Theka</label>
           <label style="font-size:12px"><input type="checkbox" id="showNum" checked> Matra #</label>
-          <label style="font-size:12px" title="Column width">W <input type="range" id="cw" min="40" max="140" value="56" style="width:70px;vertical-align:middle"></label>
-        </div>
-        <div class="grp">
-          <label style="font-size:12px" title="Matra that begins each line, e.g. 12 or 13 for Teentaal bandishes that start before sam. Data stays tied to the real matra, so changing this only re-flows the display.">Line starts at <select id="startSel"></select></label>
+          <label style="font-size:12px" title="Column width">W <input type="range" id="cw" min="34" max="140" value="46" style="width:70px;vertical-align:middle"></label>
         </div>
         <div class="grp">
           <button id="btnAddAv">＋ Avartan</button>
@@ -237,8 +203,8 @@
         <p><b>Swar (Roman shorthand):</b> <code>S R G m P D N</code> shuddha; lowercase <code>r g d n</code> komal; <code>M</code> teevra Ma. Devanagari mode inserts komal with a low line (रे॒) and teevra with a vertical stroke (म॑).
         <b>Saptak:</b> click a note, then <i>Mandra</i> (dot below) or <i>Taar</i> (dot above) to mark the octave of the last note in the cell.</p>
         <p><b>Several notes in one matra:</b> just type them together, e.g. <code>GR</code> or <code>SRGm</code>. Use <code>-</code> to hold a note, <code>ऽ</code> to extend a syllable, <code>( )</code> to group kan or meend.</p>
-        <p><b>Starting mid-cycle:</b> many bandishes start before sam (e.g. the mukhda at matra 12 or 13 in Teentaal). Set <i>Line starts at</i> in the toolbar so each line begins on that matra (e.g. 12 13 14 15 16 | ✕ 1 2 3 4 | … | 9 10 11), keeping the whole phrase on one line. Each avartan can override it with its own <i>Start</i> picker. Notation stays tied to the real matra numbers, so changing the start never moves what you've written.</p>
-        <p><b>Keys:</b> Tab runs along the row: across the Swar line, then the Bol line of the same avartan, then the next avartan (Shift+Tab goes back). Enter moves to the next matra in the same kind of row (Swar→Swar or Bol→Bol) across avartans; Shift+Enter goes back. Ctrl+S saves. Use the section tag on each avartan (Sthayi, Antara, …) to group lines.</p>
+        <p><b>Starting mid-cycle:</b> many bandishes start before sam (e.g. the mukhda at matra 9 or 13 in Teentaal). Leave the earlier matras blank in the first avartan.</p>
+        <p><b>Keys:</b> Enter moves to the next matra; Shift+Enter goes back. Ctrl+S saves. Use the section tag on each avartan (Sthayi, Antara, …) to group lines.</p>
         <p><b>Saving:</b> everything autosaves in this browser. <i>Link save folder</i> (Chrome / Edge) writes each bandish as a <code>.bandish.json</code> file into a folder you choose, e.g. a <code>Bandish_Data</code> subfolder next to this file. <i>Export</i> / <i>Backup all</i> work in every browser.</p>
         <p><b>Theka bols</b> are the common versions; they vary by gharana, so use <i>Edit theka</i> to match your teacher's. Changes apply to this bandish only.</p>
       </details>
@@ -257,7 +223,6 @@
   </div>
 </div>
 <div id="toast"></div>
-<div id="printView"></div>
 
 <script>
 /* ===================== TAAL LIBRARY ===================== */
@@ -381,9 +346,7 @@ function applyTaal(key, customDef){
   if (!cur.avartans.length){ cur.avartans = [blankAv(n,'Sthayi'), blankAv(n,'Sthayi'), blankAv(n,'Antara'), blankAv(n,'Antara')]; }
   else cur.avartans.forEach(a => {
     ['swar','bol'].forEach(f => { while(a[f].length<n) a[f].push(''); a[f].length = n; });
-    if (a.start && a.start > n) delete a.start;
   });
-  if (!cur.startMatra || cur.startMatra > n) cur.startMatra = 1;
   $('taalSel').value = key;
   touch(); render();
 }
@@ -417,25 +380,15 @@ function render(){
   $('taalInfo').style.display='block';
   $('taalInfo').innerHTML = `<b>${esc(def.name)}</b> — ${n} matras, ${def.vib.length} vibhags (${def.vib.join(' + ')}). `
     + `Taali/khali: ${def.marks.map(m=>m.toUpperCase()==='X'?'X (sam)':m==='0'?'0 (khali)':m).join(' | ')}.`
-    + (def.note ? ` <i>${esc(def.note)}</i>` : '')
-    + (defStart(n) !== 1 ? ` Lines start at matra <b>${defStart(n)}</b>.` : '');
-
-  // bandish-level start selector
-  const ds = defStart(n);
-  $('startSel').innerHTML = Array.from({length:n}, (_,i) =>
-    `<option value="${i+1}"${i+1===ds?' selected':''}>${i+1}${i===0?' (sam)':''}</option>`).join('');
+    + (def.note ? ` <i>${esc(def.note)}</i>` : '');
 
   let html = '', prevSec = null;
   cur.avartans.forEach((a, ai) => {
-    const own = a.start && a.start <= n ? a.start : 0;
-    const startOpts = `<option value=""${own?'':' selected'}>Start: default (${ds})</option>`
-      + Array.from({length:n}, (_,i) => `<option value="${i+1}"${own===i+1?' selected':''}>Start: ${i+1}</option>`).join('');
     if (a.section !== prevSec){ html += `<div class="section-h">${esc(a.section)}</div>`; prevSec = a.section; }
     html += `<div class="av" data-a="${ai}">
       <div class="av-head">
         <select data-sec="${ai}" title="Section">${SECTIONS.map(s=>`<option${s===a.section?' selected':''}>${s}</option>`).join('')}</select>
         <span>Avartan ${ai+1}</span>
-        <select class="avstart" data-start="${ai}" title="Matra this line starts on (overrides the toolbar setting)">${startOpts}</select>
         <input class="avnote" data-note="${ai}" placeholder="note for this line (optional)" value="${esc(a.note)}">
         <button data-act="up" title="Move up">↑</button><button data-act="down" title="Move down">↓</button>
         <button data-act="dup" title="Duplicate">⧉</button><button data-act="ins" title="Insert blank below">＋</button>
@@ -451,46 +404,24 @@ function render(){
   if ($('thekaEditor').style.display !== 'none') renderThekaEditor();
 }
 
-/* start matra (1-based) for the bandish, and for one avartan */
-function defStart(n){ const s = +cur.startMatra || 1; return s >= 1 && s <= n ? s : 1; }
-function avStart(a, n){ return a.start && a.start >= 1 && a.start <= n ? a.start : defStart(n); }
-
-/* Split the rotated matra order into display segments. A vibhag that straddles
-   the line start appears twice: its tail first (no mark, dashed left edge) and
-   its head last (with its mark, dashed right edge). Data indices stay real. */
-function segments(def, start0){
-  const n = matras(def), info = [];
-  def.vib.forEach((len, vi) => { for (let j=0;j<len;j++) info.push({vi, first:j===0, last:j===len-1}); });
-  const segs = [];
-  for (let k=0; k<n; k++){
-    const idx = (start0 + k) % n, m = info[idx], prev = segs[segs.length-1];
-    if (!prev || prev.vi !== m.vi || m.first) segs.push({vi:m.vi, head:m.first, idxs:[idx], closed:m.last});
-    else { prev.idxs.push(idx); prev.closed = m.last; }
-  }
-  return segs;
-}
-
 function gridHTML(def, ai, a){
-  const n = matras(def), start0 = avStart(a, n) - 1;
-  let vibHtml = '';
-  segments(def, start0).forEach(seg => {
-    const mk = seg.head ? (def.marks[seg.vi] ?? '') : '';
-    const len = seg.idxs.length;
+  let idx = 0, vibHtml = '';
+  def.vib.forEach((len, vi) => {
+    const mk = def.marks[vi] ?? '';
     let cells = '';
-    seg.idxs.forEach(idx => {
+    for (let j=0; j<len; j++, idx++){
       const isSam = idx === 0;
       cells += `<div class="cell${isSam?' samcell':''}">
         <div class="num">${idx+1}</div>
-        <div class="theka" data-ti="${idx}" title="${esc(cur.theka[idx])}">${esc(cur.theka[idx])}</div>
+        <div class="theka" title="${esc(cur.theka[idx])}">${esc(cur.theka[idx])}</div>
         <input class="swar" data-a="${ai}" data-i="${idx}" data-k="swar" value="${esc(a.swar[idx])}" autocomplete="off" spellcheck="false">
         <input class="bol"  data-a="${ai}" data-i="${idx}" data-k="bol"  value="${esc(a.bol[idx])}"  autocomplete="off" spellcheck="false">
       </div>`;
-    });
-    const cls = 'vib' + (seg.head ? '' : ' cont') + (seg.closed ? '' : ' openend');
-    vibHtml += `<div class="${cls}" style="flex:${len} 1 calc(${len} * var(--cw,56px) + 6px)"><div class="mark ${mk?markClass(mk):''}">${mk?esc(markLabel(mk)):''}</div><div class="cells">${cells}</div></div>`;
+    }
+    vibHtml += `<div class="vib" style="flex:${len} 1 calc(${len} * var(--cw,46px) + 6px)"><div class="mark ${markClass(mk)}">${esc(markLabel(mk))}</div><div class="cells">${cells}</div></div>`;
   });
   return `<div class="grid">
-    <div class="rowlbl"><div style="height:20px"></div><div class="rl-num"></div><div class="rl-theka">theka</div><div class="rl-swar">Swar</div><div class="rl-bol">Bol</div></div>
+    <div class="rowlbl"><div style="height:15px"></div><div class="rl-num"></div><div class="rl-theka">theka</div><div class="rl-swar">Swar</div><div class="rl-bol">Bol</div></div>
     <div class="vibs">${vibHtml}</div></div>`;
 }
 
@@ -517,7 +448,7 @@ function renderThekaEditor(){
 }
 function refreshThekaCells(){
   document.querySelectorAll('#editor .av').forEach(av => {
-    av.querySelectorAll('.theka[data-ti]').forEach(t => { const i = +t.dataset.ti; t.textContent = cur.theka[i] || ''; t.title = cur.theka[i] || ''; });
+    av.querySelectorAll('.theka').forEach((t,i) => { t.textContent = cur.theka[i] || ''; t.title = cur.theka[i] || ''; });
   });
 }
 $('btnEditTheka').onclick = () => {
@@ -536,27 +467,10 @@ ed.addEventListener('input', e => {
 ed.addEventListener('change', e => {
   const t = e.target;
   if (t.dataset.sec !== undefined){ cur.avartans[+t.dataset.sec].section = t.value; touch(); render(); }
-  else if (t.dataset.start !== undefined){
-    const a = cur.avartans[+t.dataset.start];
-    if (t.value) a.start = +t.value; else delete a.start;
-    touch(); render();
-  }
 });
-$('startSel').addEventListener('change', e => { cur.startMatra = +e.target.value || 1; touch(); render(); });
 ed.addEventListener('focusin', e => { if (e.target.dataset.k) lastInput = e.target; });
 ed.addEventListener('keydown', e => {
-  const t = e.target; if (!t.dataset.k) return;
-  if (e.key === 'Tab'){
-    // row-wise order: avartan 1 swar row, avartan 1 bol row, avartan 2 swar row, ...
-    const order = [];
-    ed.querySelectorAll('.av').forEach(av => {
-      order.push(...av.querySelectorAll('input[data-k="swar"]'), ...av.querySelectorAll('input[data-k="bol"]'));
-    });
-    const i = order.indexOf(t) + (e.shiftKey ? -1 : 1);
-    if (order[i]){ e.preventDefault(); order[i].focus(); order[i].select(); }
-    return;   // at either end, let the browser move focus out normally
-  }
-  if (e.key !== 'Enter') return;
+  const t = e.target; if (!t.dataset.k || e.key !== 'Enter') return;
   e.preventDefault();
   const all = [...ed.querySelectorAll(`input[data-k="${t.dataset.k}"]`)];
   const i = all.indexOf(t) + (e.shiftKey ? -1 : 1);
@@ -643,8 +557,13 @@ function applyPrefs(){
   ed.classList.toggle('hide-num', !$('showNum').checked);
   document.documentElement.style.setProperty('--cw', $('cw').value + 'px');
 }
+function setSide(collapsed){
+  document.body.classList.toggle('side-collapsed', collapsed);
+  $('btnSide').title = collapsed ? 'Show the left panel (folder & saved bandishes)' : 'Hide the left panel';
+}
+$('btnSide').onclick = () => { setSide(!document.body.classList.contains('side-collapsed')); savePrefs(); };
 function savePrefs(){
-  localStorage.setItem(LS_PREFS, JSON.stringify({ script:$('script').value, theka:$('showTheka').checked, num:$('showNum').checked, cw:$('cw').value }));
+  localStorage.setItem(LS_PREFS, JSON.stringify({ script:$('script').value, theka:$('showTheka').checked, num:$('showNum').checked, cw:$('cw').value, side:document.body.classList.contains('side-collapsed') }));
 }
 function loadPrefs(){
   try{
@@ -653,6 +572,7 @@ function loadPrefs(){
     if (p.theka !== undefined) $('showTheka').checked = p.theka;
     if (p.num !== undefined) $('showNum').checked = p.num;
     if (p.cw) $('cw').value = p.cw;
+    setSide(!!p.side);
   }catch(e){}
 }
 ['showTheka','showNum','cw'].forEach(id => $(id).addEventListener('input', () => { applyPrefs(); savePrefs(); }));
@@ -819,78 +739,7 @@ function mergeIn(data){
   });
   return {added, updated, lastId};
 }
-/* ---------- print view: built from the data, not from the editor inputs ---------- */
-function buildPrintView(){
-  const pv = $('printView');
-  const has = s => s && String(s).trim();
-  const def = cur.taal ? taalDef(cur) : null, n = def ? matras(def) : 0;
-  const raag = has(cur.raag) ? (/^r[aā]+g\b/i.test(cur.raag.trim()) ? cur.raag.trim() : 'Raag ' + cur.raag.trim()) : '';
-  const sub = [raag, def && `${def.name} · ${n} matras`, has(cur.laya) && cur.laya + ' laya',
-               has(cur.tempo) && cur.tempo + ' BPM', has(cur.btype) && cur.btype].filter(Boolean);
-  const facts = [['Thaat',cur.thaat],['Composer',cur.composer],['Learned from',cur.source]].filter(p => has(p[1]));
-
-  let h = `<div class="pv-head">
-    <h1 class="pv-title">${esc(cur.title || 'Untitled bandish')}</h1>
-    ${sub.length ? `<div class="pv-sub">${sub.map(esc).join('<span class="dot">•</span>')}</div>` : ''}
-    ${facts.length ? `<div class="pv-facts">${facts.map(([k,v]) => `<div><span>${k}</span>${esc(v)}</div>`).join('')}</div>` : ''}
-    ${has(cur.notes) ? `<div class="pv-notes">${esc(cur.notes)}</div>` : ''}
-  </div>`;
-
-  if (!def){ pv.innerHTML = h + '<div class="pv-empty">No taal selected.</div>'; return; }
-
-  h += `<div class="pv-legend"><span><b class="sam">✕</b> Sam</span><span><b class="kh">0</b> Khali</span>
-    <span><b class="ta">2 3 …</b> Taali</span><span><b>-</b> hold</span><span><b>ऽ</b> avagraha</span>
-    <span>dot below / above = mandra / taar saptak</span></div>`;
-
-  const showTheka = $('showTheka').checked, showNum = $('showNum').checked;
-  const markOf = [];
-  def.vib.forEach((len, vi) => { for (let j=0;j<len;j++) markOf.push(String(def.marks[vi] ?? '')); });
-  const mcls = m => { m = m.toUpperCase(); return m==='X' ? 'sam' : m==='0' ? 'kh' : 'ta'; };
-
-  const filled = a => a.swar.some(x=>x.trim()) || a.bol.some(x=>x.trim()) || has(a.note);
-  let prevSec = null, printed = 0;
-  cur.avartans.forEach((a, ai) => {
-    if (!filled(a)) return;                       // skip blank avartans in the printout
-    printed++;
-    if (a.section !== prevSec){ h += `<div class="pv-sec">${esc(a.section)}</div>`; prevSec = a.section; }
-
-    // flatten the (possibly rotated) segments into cells with border classes
-    const cells = [];
-    const segs = segments(def, avStart(a, n) - 1);
-    segs.forEach((seg, si) => seg.idxs.forEach((idx, k) => {
-      const c = { idx, cls:[] };
-      if (k === 0) c.cls.push(seg.head ? 'vb' : 'vbc');
-      if (k === 0 && seg.head) c.mark = markOf[idx];
-      if (si === segs.length-1 && k === seg.idxs.length-1) c.cls.push(seg.closed ? 've' : 'veo');
-      if (markOf[idx] === '0') c.cls.push('kh');
-      if (idx === 0) c.cls.push('samc');
-      cells.push(c);
-    }));
-    const row = (cls, label, fn) => `<tr class="${cls}"><th>${label}</th>${cells.map(fn).join('')}</tr>`;
-    const cl = (c, extra) => `class="${c.cls.concat(extra||[]).join(' ')}"`;
-
-    h += `<div class="pv-av">
-      ${has(a.note) ? `<div class="pv-cap"><i>${esc(a.note)}</i></div>` : ''}
-      <table class="pv"><colgroup><col style="width:13mm">${cells.map(()=>'<col>').join('')}</colgroup>
-      ${row('r-mark', '', c => `<td ${cl(c, c.mark ? [mcls(c.mark)] : [])}>${c.mark ? esc(markLabel(c.mark)) : ''}</td>`)}
-      ${showNum ? row('r-num', 'Matra', c => `<td ${cl(c)}>${c.idx+1}</td>`) : ''}
-      ${showTheka ? row('r-theka', 'Theka', c => `<td ${cl(c)}>${esc(cur.theka[c.idx])}</td>`) : ''}
-      ${row('r-swar', 'Swar', c => `<td ${cl(c)}>${esc(a.swar[c.idx])}</td>`)}
-      ${row('r-bol', 'Bol', c => `<td ${cl(c)}>${esc(a.bol[c.idx])}</td>`)}
-      </table></div>`;
-  });
-  if (!printed) h += '<div class="pv-empty">No notation entered yet.</div>';
-  pv.innerHTML = h;
-}
-let _docTitle = document.title;
-window.addEventListener('beforeprint', () => {
-  buildPrintView();
-  _docTitle = document.title;
-  const t = [cur.title, cur.raag].filter(s => s && s.trim()).join(' - ');
-  if (t) document.title = t;                      // becomes the suggested PDF file name
-});
-window.addEventListener('afterprint', () => { document.title = _docTitle; });
-$('btnPrint').onclick = () => { buildPrintView(); window.print(); };
+$('btnPrint').onclick = () => window.print();
 
 /* ===================== INIT ===================== */
 (async function init(){
